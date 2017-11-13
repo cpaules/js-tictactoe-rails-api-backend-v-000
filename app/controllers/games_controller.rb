@@ -31,6 +31,11 @@ class GamesController < ApplicationController
     render json: @game
   end
 
+  def index 
+    @games = Game.all
+    render json: @game
+  end
+
   private
 
   def game_params
