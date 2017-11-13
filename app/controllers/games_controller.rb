@@ -16,14 +16,12 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.create(state: params[:state])
-    redirect_to games_path
+    render json: @game
   end
 
   def show
     @game = Game.find(params[:id])
-    respond_to do |format|
-      format.json { render json: @game}
-    end
+    render json: @game
   end
 
   private
